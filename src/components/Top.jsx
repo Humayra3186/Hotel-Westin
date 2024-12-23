@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const Rooms = () => {
+const Top = () => {
     const [rooms, setRooms] = useState([])
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const Rooms = () => {
     }, [])
 
     const fetchAllRooms = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/rooms`)
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/featured`)
 
         setRooms(data)
 
@@ -20,9 +20,9 @@ const Rooms = () => {
     console.log(rooms)
     return (
         <div>
-            rooms
+            
         </div>
     );
 };
 
-export default Rooms;
+export default Top;
