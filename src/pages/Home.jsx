@@ -1,15 +1,17 @@
 import React from 'react';
-import Shit from '../components/Banner/Shit';
 import Banner from '../components/Banner/swiper/Banner';
-import HotelLocation from '../components/HotelLocation';
 import Top from '../components/Top';
+import LocationMap from '../components/LocationMap';
+import Food from '../components/Food';
 
 const Home = () => {
     return (
         <div>
          <Banner></Banner>
-         <HotelLocation></HotelLocation>
+          <LocationMap></LocationMap>
          <Top></Top>
+         <Food></Food>
+         
          
         </div>
     );

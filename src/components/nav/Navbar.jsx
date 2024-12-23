@@ -10,13 +10,13 @@ const Navbar = () => {
 
     const links = <>
 
-        <NavLink className="text-black font-semibold text-[0.9rem]" to={'/'}>Home</NavLink>
-        <NavLink className="text-black font-semibold text-[0.9rem]" to={'rooms'}>Rooms</NavLink>
-        <NavLink className="text-black font-semibold text-[0.9rem]" to={'bookings'}>My Bookings</NavLink>
+        <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'/'}>Home</NavLink>
+        <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'rooms'}>Rooms</NavLink>
+        <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'bookings'}>My Bookings</NavLink>
 
     </>
     return (
-        <div className='sticky top-0 z-10 shadow-xl bg-[#f5ebe251] backdrop-blur-sm'>
+        <div className='sticky top-0 z-10 shadow-xl bg-[#f5ebe251] backdrop-blur-md'>
             <div className="navbar p-0 w-[85%] mx-auto flex justify-between">
                 <div >
                     <div className={`bg-[#040303a8] p-4 lg:hidden absolute   duration-[600ms]  pt-4 pl-7 w-48 top-[6rem] h-screen ${open ? "  left-0" : "left-[-13rem]"}`}>
