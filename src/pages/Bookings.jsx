@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Bookings = () => {
+    const {name} = useContext(AuthContext)
     return (
         <div>
-           bookings  
+           bookings 
+           {name} 
         </div>
     );
 };

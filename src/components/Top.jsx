@@ -34,7 +34,7 @@ const Top = () => {
                 {/* tittle */}
                 <p className='text-center play font-bold text-[#af865c] text-[1.1rem] mt-[4rem]'>Top-Rated</p>
                 <div className='flex items-center justify-center mb-[2rem]'>
-                    <h2 className='play text-[2.5rem] font-bold text-gray-600'>Our Top-Featured Rooms!</h2>
+                    <h2 className='play text-[2.2rem] md:text-[2.5rem] font-bold text-gray-600'>Our Top-Featured Rooms!</h2>
 
 
                 </div>
@@ -65,7 +65,7 @@ const Top = () => {
 
                             <h2 className='play text-[1.3rem] font-semibold text-center text-gray-600'>{room.name}</h2>
 
-                            <p className='text-[0.8rem] text-center px-6 text-gray-500 mt-2'>
+                            <p className='text-[1rem] md:text-[0.8rem] text-center px-6 text-gray-500 mt-2'>
                                 {
                                     room.
                                         shortDescription
@@ -78,7 +78,7 @@ const Top = () => {
                           </div>
 
                             <div className=' flex justify-between pl-5 items-end   mb-5 '>
-                                <div className=' text-[0.8rem] text-gray-500  '>
+                                <div className='text-[1rem] md:text-[0.8rem] text-gray-500  '>
                                     <p className='text-gray-700 font-bold text-[0.9rem]'>Features :</p>
                                     <p>{room.features[0]}</p>
                                     <p>{room.features[1]}</p>
