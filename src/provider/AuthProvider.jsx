@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase.config';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 
@@ -53,12 +54,22 @@ const AuthProvider = ({children}) => {
 
    useEffect(()=>{
 
-    const unSubscribe = onAuthStateChanged(auth, (user) =>{
-
-        setUser(user)
-        setUserPhoto(user?.photoURL)
-
+    const unSubscribe = onAuthStateChanged(auth, async (user) =>{
         setLoader(false)
+        if(user?.email){
+            setUser(user)
+            setUserPhoto(user?.photoURL)
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt` , {email : user?.email} ,{withCredentials : true})
+
+            console.log(data)
+        } else{
+            setUser(user)
+            setUserPhoto(user?.photoURL)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/logout` , {withCredentials : true})
+
+            console.log(data)
+        } 
+
 
     })
 
