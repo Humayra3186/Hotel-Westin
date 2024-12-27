@@ -17,7 +17,7 @@ const Common = ({img,description,tittle}) => {
                 ease: easeInOut,
                 
             }}
-                className="hero bg-right-bottom bg-cover  w-full h-[12rem] md:h-[17rem]"
+                className="hero bg-right-bottom bg-cover  w-full h-[15rem] md:h-[17rem]"
                 style={{
                     backgroundImage: `url(${img})`,
                 }}>

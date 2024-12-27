@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Common from '../common/Common';
 import room from '../assets/img/room.jpg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MdCleaningServices, MdFastfood } from 'react-icons/md';
 import { GiBathtub } from 'react-icons/gi';
 import { IoKey } from 'react-icons/io5';
@@ -10,7 +10,7 @@ import { FaLock, FaMusic, FaPhoneAlt } from 'react-icons/fa';
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([])
-    const navigate = useNavigate()
+   
 
     //handle rooms
 
@@ -29,7 +29,7 @@ const Rooms = () => {
 
     }
 
-    console.log(rooms)
+    
     return (
         <div>
             <Common img={room} tittle='All Rooms' description='Our All Rooms'></Common>
@@ -38,7 +38,7 @@ const Rooms = () => {
             {/* cards */}
 
             <div className='bg-base-200'>
-                <div className='w-[85%] py-[6rem] mx-auto '>
+                <div className='w-[85%] py-[5rem] md:py-[6rem] mx-auto '>
 
         
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
