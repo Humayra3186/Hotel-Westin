@@ -10,6 +10,8 @@ import { FaLock, FaMusic, FaPhoneAlt } from 'react-icons/fa';
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([])
+
+    const [loading , setLoading] = useState(true)
    
 
     //handle rooms
@@ -26,6 +28,7 @@ const Rooms = () => {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/rooms`)
 
         setRooms(data)
+        setLoading(false)
 
     }
 
@@ -38,7 +41,10 @@ const Rooms = () => {
             {/* cards */}
 
             <div className='bg-base-200'>
-                <div className='w-[85%] py-[5rem] md:py-[6rem] mx-auto '>
+                {
+                    loading? <div className='min-h-screen flex justify-center items-center'>
+                                        <span className="loading loading-spinner loading-lg"></span></div>:
+  <div className='w-[85%] py-[5rem] md:py-[6rem] mx-auto '>
 
         
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
@@ -94,7 +100,9 @@ const Rooms = () => {
                     </div>
 
                 </div>
-            </div>
+            
+                }
+              </div>
         </div>
     );
 };

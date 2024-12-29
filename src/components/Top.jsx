@@ -83,7 +83,9 @@ const Top = () => {
                                     <p>{room.features[0]}</p>
                                     <p>{room.features[1]}</p>
                                 </div>
+                         
 
+                         
                                 <Link to={`details/${room._id}`} className='text-[#C4A484] font-bold hover:bg-[#C4A484] hover:text-white px-5 py-1'> Book Now
                                 </Link>
                             </div>

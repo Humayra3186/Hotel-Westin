@@ -17,7 +17,7 @@ const Food = () => {
 
     }
 
-    console.log(foods)
+   
     return (
         <div className='w-[85%] mx-auto mb-[5rem]'>
             {/* tittle */}
