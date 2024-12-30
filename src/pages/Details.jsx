@@ -30,6 +30,7 @@ const Details = () => {
     useEffect(() => {
 
         fetchDetails()
+        fetchReviews()
 
     }, [])
 
@@ -39,6 +40,13 @@ const Details = () => {
         setRoom(data)
         
         setLoading(false)
+
+    }
+
+    const fetchReviews = async () => {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/review/${id}`)
+
+       console.log(data)
 
     }
 
@@ -68,13 +76,14 @@ const Details = () => {
         axios.post(`${import.meta.env.VITE_API_URL}/bookings`, data)
             .then(result => {
                 setLoading(false)
+                fetchDetails()
         
             }
 
             )
     }
 
-    console.log(room)
+    
 
     return (
         <div className='bg-base-200 pb-[5rem]'>

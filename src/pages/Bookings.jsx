@@ -4,6 +4,7 @@ import Table from '../components/Table';
 import booking from "../assets/img/booking.jpg"
 import Common from '../common/Common';
 import axios from 'axios';
+
 const Bookings = () => {
    
       const [bookings, setBookings] = useState([])
@@ -22,7 +23,7 @@ const Bookings = () => {
         }, [user])
     
         const fetchAllBooks = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/mybookings/${email}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/mybookings/${email}`, {withCredentials: true} )
     
             setBookings(data)
     
@@ -58,7 +59,7 @@ const Bookings = () => {
                         {/* row 1 */}
 
                         {
-                            bookings?.map((book,index) =><Table key={book._id} book={book} index={index}></Table> )
+                            bookings?.map((book,index) =><Table key={book._id} book={book} fetchAllBooks={fetchAllBooks} index={index}></Table> )
                         }
                         
 

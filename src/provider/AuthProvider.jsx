@@ -61,7 +61,7 @@ const AuthProvider = ({children}) => {
             setUserPhoto(user?.photoURL)
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt` , {email : user?.email} ,{withCredentials : true})
 
-            console.log(data)
+            
         } else{
             setUser(user)
             setUserPhoto(user?.photoURL)
