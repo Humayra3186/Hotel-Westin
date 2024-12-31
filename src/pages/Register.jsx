@@ -50,7 +50,7 @@ const Register = () => {
                         setUser(userCredential.user)
                         setUserPhoto(userCredential.user?.photoURL)
                         swal("Great", "Successfully SignUp!", 'success');
-                        navigate("/")
+                        
                       }).catch((error) => {
                         console.log(error)
                       });

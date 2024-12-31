@@ -30,7 +30,7 @@ const Login = () => {
                 setUser(user)
                 setUserPhoto(user.photoURL)
                 swal("Great", "Successfully SignIn!", 'success');
-                navigate("/")
+               
                 setLoader(false)
               
 
@@ -60,7 +60,7 @@ const Login = () => {
             setUser(result.user)
             setUserPhoto(result.user.photoURL)
             swal("Great", "Successfully SignIn!", 'success');
-            navigate("/")
+            
            
         })
         .catch((error) => {
