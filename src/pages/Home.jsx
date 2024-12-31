@@ -31,7 +31,7 @@ const Home = () => {
             <dialog id="my_modal_3" className="modal">
 
 
-                <div className="modal-box w-[70%] bg-no-repeat bg-cover bg-center flex justify-center items-center p-5  md:w-[50%] backdrop-blur-lg lg:w-[30%] h-[70vh]" style={{
+                <div className="modal-box w-[70%] bg-no-repeat bg-cover bg-center flex justify-center items-center p-5  md:w-[50%] backdrop-blur-lg  lg:w-[30%] h-[70vh]" style={{
                     backgroundImage: "url(https://q-xx.bstatic.com/xdata/images/hotel/max500/357643150.jpg?k=b6387bf1563bed453376ec89f2dacb0a53bbf4ece194fa4caf6db7a878466b72&o=)",
                 }}>
 
