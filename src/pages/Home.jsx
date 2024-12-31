@@ -4,7 +4,8 @@ import Top from '../components/Top';
 import LocationMap from '../components/LocationMap';
 import Food from '../components/Food';
 import Facilites from '../components/Facilites';
-import Review from '../components/Review';
+import Review from '../components/review/Review';
+
 
 
 const Home = () => {
@@ -13,9 +14,10 @@ const Home = () => {
          <Banner></Banner>
           <LocationMap></LocationMap>
          <Top></Top>
+         <Review></Review>
          <Facilites></Facilites>
          <Food></Food>
-         <Review></Review>
+        
          
          
         </div>

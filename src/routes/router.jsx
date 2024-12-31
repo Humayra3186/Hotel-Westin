@@ -9,12 +9,15 @@ import Bookings from "../pages/Bookings";
 import Details from "../pages/Details";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Privet from "../privet/Privet";
+import ErrorPage from "../pages/ErrorPage";
 
 
  export const router = createBrowserRouter([
     {
       path: "/",
       element:<MainPage></MainPage>,
+      errorElement:<ErrorPage></ErrorPage>,
       children : [
         {
             path : "/",
@@ -26,7 +29,7 @@ import Login from "../pages/Login";
         },
         {
             path : "bookings",
-            element : <Bookings></Bookings>
+            element : <Privet><Bookings></Bookings></Privet> 
         },
         {
           path : "details/:id",

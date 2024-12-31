@@ -1,6 +1,6 @@
 
 
-# <img src="https://cdn.freebiesupply.com/logos/large/2x/westin-1-logo-png-transparent.png" width="30px" height></img> Hotel Westin
+# <img src="https://cdn.freebiesupply.com/logos/large/2x/westin-1-logo-png-transparent.png" width="50px" ></img> Hotel Westin
 
 
 ## Live link

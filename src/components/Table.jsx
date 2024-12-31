@@ -66,13 +66,36 @@ const Table = ({ book, index, fetchAllBooks }) => {
       swal("Sorry!", "You can't cancel now!", "error");
     }
 
-    axios.post(`${import.meta.env.VITE_API_URL}/cancel/${book?._id}`, data)
-
-      .then(data => {
+    else{
+      swal({
+        title: "Are you sure?",
        
-        fetchAllBooks()
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
       })
+      .then((willDelete) => {
+        if (willDelete) {
+  
+          axios.post(`${import.meta.env.VITE_API_URL}/cancel/${book?._id}`, data)
+  
+          .then(data => {
+            swal("Poof! Your Booked Room has been cancelled!", {
+              icon: "success",
+            });
+            fetchAllBooks()
+          })
+    
+         
+        } else {
+          swal("Your booked room is safe!");
+        }
+      });
+    }
 
+  
+
+   
 
 
     
@@ -99,14 +122,19 @@ const Table = ({ book, index, fetchAllBooks }) => {
     const comment = e.target.comment.value
     const rate = rating
     const time = date
+    const img = book.img
 
     const review = {
-      id,name,photo,comment,rate,time
+      id,name,photo,comment,rate,time,img
     }
 
 
     axios.post(`${import.meta.env.VITE_API_URL}/review`, review)
-    .then(data=> console.log(data.data))
+    .then(data=> {
+
+      swal("Great", "Successfully Posted A Review!", 'success');
+      
+      console.log(data.data)})
    
 
    

@@ -54,18 +54,30 @@ const AuthProvider = ({children}) => {
 
    useEffect(()=>{
 
-    const unSubscribe = onAuthStateChanged(auth, async (user) =>{
+    const unSubscribe = onAuthStateChanged(auth,(user) =>{
         setLoader(false)
+        setUser(user)
+        setUserPhoto(user?.photoURL)
         if(user?.email){
-            setUser(user)
-            setUserPhoto(user?.photoURL)
-            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/jwt` , {email : user?.email} ,{withCredentials : true})
+          
+          
+             axios.post(`${import.meta.env.VITE_API_URL}/jwt` , {email : user?.email} ,{withCredentials : true})
+
+            .then(data =>{
+                console.log(data.data)
+            })
 
             
         } else{
-            setUser(user)
-            setUserPhoto(user?.photoURL)
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/logout` , {withCredentials : true})
+           
+           
+            axios.get(`${import.meta.env.VITE_API_URL}/logout` , {withCredentials : true})
+            .then(data =>{
+                console.log(data.data)
+            })
+
+
+           
 
           
         } 
@@ -80,7 +92,7 @@ const AuthProvider = ({children}) => {
    },[])
     
 
-    const userInfo = {open, setOpen,user,setUser,loader ,userPhoto,setUserPhoto, createUser,updateUser, signInUser , signOutUser}
+    const userInfo = {open, setOpen,user,setUser,loader,setLoader ,userPhoto,setUserPhoto, createUser,updateUser, signInUser , signOutUser}
     return (
         <AuthContext.Provider value={userInfo}>
 

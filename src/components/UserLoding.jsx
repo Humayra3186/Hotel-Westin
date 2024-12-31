@@ -1,9 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 
 const UserLoding = () => {
-     const { user, loader, signOutUser, userPhoto } = useContext(AuthContext)
+     const { user,loader, signOutUser, userPhoto } = useContext(AuthContext)
+
+     
+
+
+
+
+
     if (loader) {
         return (
             <div className='flex justify-center'> <span className="loading text-black loading-dots loading-lg"></span></div>

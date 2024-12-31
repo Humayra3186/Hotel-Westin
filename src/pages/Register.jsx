@@ -1,17 +1,22 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import google from "../assets/img/google.webp"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bounce } from 'react-awesome-reveal';
 import { SiSimplelogin } from "react-icons/si";
 import { AuthContext } from '../provider/AuthProvider';
+import swal from 'sweetalert';
 
 const Register = () => {
+
+    const navigate = useNavigate()
+
+    const pass = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
     const [show, setShow] = useState(false)
         const [error , setError] =useState("")
 
-        const {user , createUser,updateUser,setUser,setUserPhoto} = useContext(AuthContext)
+        const {user ,setLoader, createUser,updateUser,setUser,setUserPhoto} = useContext(AuthContext)
 
         console.log(user)
 
@@ -32,31 +37,44 @@ const Register = () => {
 
             const password = form.password.value;
 
-            createUser(email,password)
-            .then((userCredential) => {
-                updateUser({
-                    displayName: name, photoURL: photo
-                  })
-                  .then(() => {
-                    setUserPhoto(userCredential.user?.photoURL)
-                  }).catch((error) => {
-                    console.log(error)
-                  });
-    
-                  
-                  setUser(userCredential.user)
-                  
-                 
-               
-              })
-              .catch((error) => {
+            if (pass.test(password)){
+                setError("")
                 
-                const errorMessage = error.message;
-                 setError(errorMessage)
-              });
+                createUser(email,password)
+                .then((userCredential) => {
+                    updateUser({
+                        displayName: name, photoURL: photo
+                      })
+                      .then(() => {
+                        setLoader(false)
+                        setUser(userCredential.user)
+                        setUserPhoto(userCredential.user?.photoURL)
+                        swal("Great", "Successfully SignUp!", 'success');
+                        navigate("/")
+                      }).catch((error) => {
+                        console.log(error)
+                      });
+        
+                      
+                     
+                      
+                     
+                   
+                  })
+                  .catch((error) => {
+                    
+                    const errorMessage = error.message;
+                     setError(errorMessage)
+                  });
+        
     
+    
+            }
+            else{
+                setError('Invalid Password')
+              }
 
-
+         
 
         }
 

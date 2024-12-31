@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import google from "../assets/img/google.webp"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PiSignInBold } from "react-icons/pi";
 import { Bounce } from 'react-awesome-reveal';
 import { AuthContext } from '../provider/AuthProvider';
@@ -10,9 +10,10 @@ import { auth } from '../firebase.config';
 
 const Login = () => {
     const provider = new GoogleAuthProvider();
+    const navigate = useNavigate()
     const [show, setShow] = useState(false)
     const [error, setError] = useState("")
-    const { signInUser,  setUserPhoto, setUser, loader } = useContext(AuthContext)
+    const { signInUser,setLoader,  setUserPhoto, setUser, loader } = useContext(AuthContext)
 
 
     const handleSubmit = e => {
@@ -22,12 +23,16 @@ const Login = () => {
         const form = e.target
         const email = form.email.value;
         const password = form.password.value;
+        setError("")
         signInUser(email, password)
             .then((userCredential) => {
-
                 const user = userCredential.user;
                 setUser(user)
                 setUserPhoto(user.photoURL)
+                swal("Great", "Successfully SignIn!", 'success');
+                navigate("/")
+                setLoader(false)
+              
 
             })
             .catch((error) => {
@@ -48,11 +53,15 @@ const Login = () => {
 
      const handleGoogle = ()=>{
       
-
+          setError("")
         signInWithPopup(auth, provider)
         .then(result =>{
+            setLoader(false)
             setUser(result.user)
             setUserPhoto(result.user.photoURL)
+            swal("Great", "Successfully SignIn!", 'success');
+            navigate("/")
+           
         })
         .catch((error) => {
            

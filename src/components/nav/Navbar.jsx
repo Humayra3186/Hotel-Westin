@@ -18,7 +18,7 @@ const Navbar = () => {
 
         <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'/'}>Home</NavLink>
         <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'rooms'}>Rooms</NavLink>
-        <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'bookings'}>My Bookings</NavLink>
+       {user &&  <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[0.9rem]" to={'bookings'}>My Bookings</NavLink>}
 
     </>
 
@@ -36,9 +36,9 @@ const Navbar = () => {
                             <div>
                             <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[1.2rem]  md:text-[0.9rem]" to={'rooms'}>Rooms</NavLink>
                             </div>
-                           <div>
+                           {user && <div>
                            <NavLink className="text-black hover:text-[#C4A484] font-semibold text-[1.2rem]  md:text-[0.9rem]" to={'bookings'}>My Bookings</NavLink>
-                           </div>
+                           </div>}
 
                         </ul>
 
