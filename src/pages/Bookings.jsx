@@ -22,11 +22,15 @@ const Bookings = () => {
 
     }, [user])
 
-    const fetchAllBooks = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/mybookings/${email}`, { withCredentials: true })
+    const fetchAllBooks =  () => {
+        axios.get(`${import.meta.env.VITE_API_URL}/mybookings/${email}`, { withCredentials: true })
 
-        setBookings(data)
-        setLoading(false)
+        .then(data =>{
+            setBookings(data.data)
+            setLoading(false)
+        })
+
+       
 
     }
 

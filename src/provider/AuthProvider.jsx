@@ -68,18 +68,6 @@ const AuthProvider = ({children}) => {
             })
 
             
-        } else{
-           
-           
-            axios.get(`${import.meta.env.VITE_API_URL}/logout` , {withCredentials : true})
-            .then(data =>{
-                console.log(data.data)
-            })
-
-
-           
-
-          
         } 
 
 
