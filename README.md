@@ -15,9 +15,9 @@
 - Backend: Node.js , Express.js   
 - Database: MongoDB  
 - Authentication: Firebase   
-- State Management: TanStack Query, Context API   
+- State Management:  Context API   
 - Hosting: Vercel , Netlify 
-- 
+
 ## Key Features
 - Authentic users Book room, change booking date , cancel booking. 
 - Also can share user experience through review
