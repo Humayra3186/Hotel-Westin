@@ -38,16 +38,16 @@
      
 ##  Installation & Setup  
 
-# Clone the repository
-git clone https://github.com/YourUsername/YourProject.git
+## Clone the repository
+git clone https://github.com/Humayra3186/Hotel-Westin.git
 
-# Navigate to the project directory
-cd YourProject
+## Navigate to the project directory
+cd Hotel-Westin
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# Start the development server
+## Start the development server
 npm start
   
   
