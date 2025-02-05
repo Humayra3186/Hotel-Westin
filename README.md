@@ -1,6 +1,6 @@
 
 
-##<img height="400" width="1200"  src="https://i.ibb.co.com/0pGpwcVs/Screenshot-2025-02-05-at-7-31-29-PM.png"  />
+##<h1>Hotel Westin</h1>
 
 
 ## Live link
