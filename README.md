@@ -1,7 +1,8 @@
 
 
-# <img src="https://cdn.freebiesupply.com/logos/large/2x/westin-1-logo-png-transparent.png" width="50px" ></img> Hotel Westin
-
+<div align="center">
+  <img  src="https://i.ibb.co.com/0pGpwcVs/Screenshot-2025-02-05-at-7-31-29-PM.png"  />
+</div>
 
 ## Live link
 <h1>(https://hotel-westin-90.netlify.app/)</h1>
