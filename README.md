@@ -1,6 +1,6 @@
 
 
-##<h1>Hotel Westin</h1>
+<h1>Hotel Westin</h1>
 
 
 ## Live link
