@@ -1,8 +1,8 @@
 
 
-<div align="center">
-  <img  src="https://i.ibb.co.com/0pGpwcVs/Screenshot-2025-02-05-at-7-31-29-PM.png"  />
-</div>
+
+  <img height="400" width="1200"  src="https://i.ibb.co.com/0pGpwcVs/Screenshot-2025-02-05-at-7-31-29-PM.png"  />
+
 
 ## Live link
 <h1>(https://hotel-westin-90.netlify.app/)</h1>
