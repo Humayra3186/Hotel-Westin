@@ -10,13 +10,21 @@
 ## Purpose
 - Hotel Westin is such a hotel room booking website. That has an excellent UI and easy to use . User can easily booked room , update date and also can cancel if they want . It is very helpful for both the Hotel Management Authority and User .  
 
+## Main Technologies 
+- Frontend: React.js , Tailwind CSS  
+- Backend: Node.js , Express.js   
+- Database: MongoDB  
+- Authentication: Firebase   
+- State Management: TanStack Query, Context API   
+- Hosting: Vercel , Netlify 
+- 
 ## Key Features
 - Authentic users Book room, change booking date , cancel booking. 
 - Also can share user experience through review
 - Can see offers in the front page
 - Can find out their wanted room according to their range.
 
-## Used NPM package
+## Used Dependencies
    
    - Swiper js for slider
    - React Awesome reveal 
@@ -27,5 +35,19 @@
    - react-datepicker
    - react-stars
    - date-fns
+     
+##  Installation & Setup  
+
+# Clone the repository
+git clone https://github.com/YourUsername/YourProject.git
+
+# Navigate to the project directory
+cd YourProject
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
   
   
