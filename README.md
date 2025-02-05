@@ -47,7 +47,7 @@ cd Hotel-Westin
 ## Install dependencies
 npm install
 
-## Start the development server
+## Start 
 npm run dev
   
   
